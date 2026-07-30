@@ -1,8 +1,7 @@
 from flask import Flask
 
 from app.config import Config
-from app.extensions import db, jwt, bcrypt
-
+from app.extensions import db, jwt, bcrypt, migrate
 
 def create_app():
     """
@@ -19,6 +18,7 @@ def create_app():
     db.init_app(app)
     jwt.init_app(app)
     bcrypt.init_app(app)
+    migrate.init_app(app, db)
 
     # Register Blueprints
     from app.routes.home import home_bp

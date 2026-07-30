@@ -12,10 +12,7 @@ class Config:
     SECRET_KEY = os.getenv("SECRET_KEY", "change-this-secret-key")
 
     # Database
-    SQLALCHEMY_DATABASE_URI = os.getenv(
-            "DATABASE_URL",
-            "sqlite:///dataflow.db"
-    )
+    SQLALCHEMY_DATABASE_URI = "sqlite:///dataflow.db"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     # JWT
